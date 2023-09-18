@@ -55,11 +55,14 @@ export function API({ stack }: StackContext) {
       'GET /products': 'packages/functions/src/product.list.handler',
       'POST /products': 'packages/functions/src/product.create.handler',
 
-      'GET /orders': 'packages/functions/src/order.list.handler',
-      'POST /orders': 'packages/functions/src/order.create.handler',
-      'GET /orders/{id}': 'packages/functions/src/order.get.handler',
+      'GET /orders':
+        'packages/checkout/src/handlers/order.list.handler',
+      'POST /orders':
+        'packages/checkout/src/handlers/order.create.handler',
+      'GET /orders/{id}': 'packages/checkout/src/handlers/order.get.handler',
       'PUT /orders/{id}/status/{status}':
-        'packages/functions/src/order_status.update.handler',
+          'packages/checkout/src/handlers/order_status.update.handler',
+  
     },
   });
 
